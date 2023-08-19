@@ -34,13 +34,15 @@ function render(variables = {}) {
   if (variables.socialMediaPosition == "position-left")
     ubic = `<ul class="position-left">`;
   if (variables.role == null) variables.role = "Your role";
+  if (variables.city == null) variables.city = "city";
+  if (variables.country == null) variables.country = "country";
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
           <h1>${variables.name}  ${variables.lastname}</h1>
           <h2>${variables.role}</h2>
-          <h3>Miami, USA</h3>
+          <h3>${variables.city}, ${variables.country}</h3>
           ${ubic}
             <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
